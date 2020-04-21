@@ -1,0 +1,17 @@
+{
+  "name": "InitialNotificationTest",
+  "displayName": "InitialNotificationTest",
+  "expo": {
+    "name": "InitialNotificationTest",
+    "slug": "InitialNotificationTest",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

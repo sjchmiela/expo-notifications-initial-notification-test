@@ -22,6 +22,15 @@ export default function App() {
   }, []);
   return (
     <View style={styles.container}>
+      <Text style={{ marginBottom: 20 }}>
+        1. Ensure notifications are allowed to be presented.{"\n"}
+        2. Tap on the button below a couple of times.{"\n"}
+        3. Immediately, background the application.{"\n"}
+        4. See the notifications arrive.{"\n"}
+        5. Kill the app. (Double Home tap, swipe app up){"\n"}
+        6. Tap on one of the notifications.{"\n"}
+        7. See the warning show up.
+      </Text>
       <Button title="Schedule the notification" onPress={onPress} />
     </View>
   );

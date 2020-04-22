@@ -1,10 +1,28 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View, Button } from "react-native";
+import * as Notifications from "expo-notifications";
+
+Notifications.addNotificationResponseReceivedListener((response) => {
+  console.warn(response);
+});
 
 export default function App() {
+  React.useEffect(() => {
+    Notifications.requestPermissionsAsync();
+  }, []);
+  const onPress = React.useCallback(() => {
+    Notifications.scheduleNotificationAsync({
+      content: {
+        title: "Tap to open the app",
+      },
+      trigger: {
+        seconds: 5,
+      },
+    });
+  }, []);
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
+      <Button title="Schedule the notification" onPress={onPress} />
     </View>
   );
 }
@@ -12,8 +30,8 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
